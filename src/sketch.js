@@ -18,7 +18,7 @@ let x3Bubbles = 150;
 let y3Bubbles = 600;
 
 function preload() {
-  img = loadImage('.../img/Paul.png');
+  img = loadImage('.../assets/Paul.png');
 }
 
 function draw() {
