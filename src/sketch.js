@@ -1,3 +1,5 @@
+let eyeX;
+let eyeY;
 let col = (240, 240, 130, 200)
 let img;
 let clicked = false;
@@ -23,7 +25,7 @@ function setup() {
 
 function draw() {
   background(3, 101, 140);
-
+  eye(350, 375, 0.5);
   
 //submarine
   noStroke();
@@ -110,3 +112,30 @@ function drawPaul(x, y) {
   pop();
 }
 
+function eye(x, y, s) {
+  
+  push();
+    translate(x, y);
+    scale(s);
+  
+  if (mouseX >= 0, mouseX <= width, mouseY >= 0, mouseY <= height) {
+    eyeX = map(mouseX, 0, width, -12, 12);
+    eyeY = map(mouseY, 0, height, -6, 6);
+  }
+
+  //clipping mask
+  beginClip();
+  ellipse(0, 0, 72, 27);
+  endClip();
+  
+  // eye
+  fill('white');
+  ellipse(0, 0, 72, 27);
+  ellipse(0, 0, 72, 27);
+  fill('red');
+  ellipse(eyeX, eyeY, 27);
+  fill('black');
+  ellipse(eyeX, eyeY, 9);
+  
+  pop();
+}
