@@ -1,12 +1,3 @@
-function setup() {
-  // These lines are fitting our canvas
-  // where we want in the DOM
-  // so that we can manipulate its style
-  // easier
-  let myCanvas = createCanvas(400, 400);
-  myCanvas.parent("canvas-parent");
-}
-
 let col = (240, 240, 130, 200)
 let img;
 let clicked = false;
@@ -18,7 +9,16 @@ let x3Bubbles = 150;
 let y3Bubbles = 600;
 
 function preload() {
-  img = loadImage('.../assets/Paul.png');
+  img = loadImage('../assets/Paul.png');
+}
+
+function setup() {
+  // These lines are fitting our canvas
+  // where we want in the DOM
+  // so that we can manipulate its style
+  // easier
+  let myCanvas = createCanvas(400, 400);
+  myCanvas.parent("canvas-parent");
 }
 
 function draw() {
