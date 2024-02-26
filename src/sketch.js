@@ -13,14 +13,14 @@ function setup() {
 function draw() {
   background(220);
 
-  eye(200, 200);
+  eye(350, 375, 0.5);
 }
 
-function eye(x, y) {
+function eye(x, y, s) {
   
   push();
     translate(x, y);
-    
+    scale(s);
   
   if (mouseX >= 0, mouseX <= width, mouseY >= 0, mouseY <= height) {
     eyeX = map(mouseX, 0, width, -12, 12);
